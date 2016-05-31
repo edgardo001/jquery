@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Agregar/Eliminar Inputs</title>
+		<script src="http://dl.dropbox.com/u/76575397/jQuery/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				var MaxInputs       = 10; //cantidad maxima de cajas de texto permitidas
+				var contenedor   	= $("#contenedor"); //Input boxes wrapper ID
+				var AddButton       = $("#agregarCampo"); //Add button ID
+
+				//var x = contenedor.length; //initlal text box count
+				var x = $("#contenedor div").length + 1;
+				var FieldCount = x-1; //to keep track of text box added
+
+				$(AddButton).click(function (e)  //on add input button click
+				{
+						if(x <= MaxInputs) //max input box allowed
+						{
+							FieldCount++; //text box added increment
+							//add input box
+							$(contenedor).append('<div class="added"><input type="text" name="mitexto[]" id="campo_'+ FieldCount +'" placeholder="Texto '+ FieldCount +'"/><a href="#" class="eliminar">borrar</a></div>');
+							x++; //text box increment
+						}
+				return false;
+				});
+
+				$("body").on("click",".eliminar", function(e){ //user click on remove text
+						if( x > 1 ) {
+								$(this).parent('div').remove(); //remove text box
+								x--; //decrement textbox
+						}
+				return false;
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<a id="agregarCampo" class="btn btn-info" href="#">Agregar Campo</a>
+			<div id="contenedor">
+				<div class="added">
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

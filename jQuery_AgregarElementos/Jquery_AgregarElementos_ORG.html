@@ -1,0 +1,21 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jquery Examples</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+var nextinput = 0;
+function AgregarCampos(){
+nextinput++;
+campo = '<li id="rut'+nextinput+'">Campo:<input type="text" size="20" id="campo' + nextinput + '"&nbsp; name="campo' + nextinput + '"&nbsp; /></li>';
+$("#campos").append(campo);
+}
+</script>
+</head>
+<body>
+ <form id="form" name="form" method="post">
+ <a href="#" onclick="AgregarCampos();">Agregar Campos</a>
+ <div id="campos">
+ </div>
+</form>

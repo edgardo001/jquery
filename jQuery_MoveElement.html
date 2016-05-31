@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista editable y ordenable</title>
+    <meta charset="utf-8">
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Lista de tareas</h1>
+		<ul id="lista">
+			<li><input id="Text1" type="text" /></li>
+			<li>gaston</li>
+			<li>daniel</li>
+			<li>juan</li>
+		</ul>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<script>
+		$(function(){
+			var lista = $('#lista');			
+			lista.sortable({
+                update: function(event,ui){
+                }
+            });
+		});
+	</script>
+</body>
+</html>
